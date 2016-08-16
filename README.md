@@ -17,5 +17,5 @@ I'd like to see if a bike is working
 | Objects | Messages |
 | ------- | -------- |
 | Person | |
-| Bike | check_working |
-| Docking station | release_bike |
+| Bike | check_working? |
+| DockingStation | release_bike |
