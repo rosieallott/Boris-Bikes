@@ -11,4 +11,5 @@ describe DockingStation do
     expect(subject.dock_bike(bike)).to eq bike
   end
   it {expect(subject).to respond_to(:bike)}
+  it {expect(subject.release_bike).to raise_error}
 end
