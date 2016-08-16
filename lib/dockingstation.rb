@@ -1,14 +1,14 @@
 require './lib/bike'
 
 class DockingStation
-  attr_accessor :bike
+  attr_reader :bike
 
   def release_bike
     @bike = Bike.new
   end
 
   def dock_bike(bike)
-    bike
+    @bike = bike
   end
 
 end

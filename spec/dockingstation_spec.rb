@@ -10,4 +10,5 @@ describe DockingStation do
     #We want to return the bike we dock
     expect(subject.dock_bike(bike)).to eq bike
   end
+  it {expect(subject).to respond_to(:bike)}
 end
