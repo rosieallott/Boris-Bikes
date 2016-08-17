@@ -8,10 +8,8 @@ class DockingStation
   end
 
   def release_bike
-    raise "no bikes" unless @bike
-    bike = @bike
-    @bike = nil #dont return me
-    bike
+    raise "no bikes" if @bike == []
+    @bike.pop
   end
 
   def dock_bike(bike)
