@@ -16,15 +16,9 @@ describe DockingStation do
   end
 #currently tests anytime relseasing a bike an error is raised. if too many bikes are taken, report back empty.
   #so dock cannot be full but can be empty
-  it "can only release a specific bike once" do
-    bike = Bike.new
-    subject.dock_bike(bike)
-    subject.release_bike
-    expect{subject.release_bike}.to raise_error("no bikes")
-  end
 
   it "only allows docking up to a certain capacity then throws full error" do
     subjecto = DockingStation.new
-    expect {22.times do subjecto.dock_bike(Bike.new) end}.to raise_error("full!")
+    expect {DockingStation::DEFAULT_CAPACITY.times do subjecto.dock_bike(Bike.new) end}.to raise_error("full!")
   end
 end
