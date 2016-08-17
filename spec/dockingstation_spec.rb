@@ -27,4 +27,9 @@ describe DockingStation do
     expect(subject.release_bike).to eq bike
     expect{subject.release_bike}.to raise_error("no bikes")
   end
+
+  it "only allows docking up to a certain capacity then throws full error" do
+    subjecto = DockingStation.new
+    expect {22.times do subjecto.dock_bike(Bike.new) end}.to raise_error("full!")
+  end
 end
