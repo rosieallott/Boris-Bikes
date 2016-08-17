@@ -10,6 +10,11 @@ describe DockingStation do
     #We want to return the bike we dock
     expect(subject.dock_bike(bike)).to eq bike
   end
-  it {expect(subject).to respond_to(:bike)}
-  it {expect(subject.release_bike).to raise_error}
+
+
+  it "raises empty exceptions" do
+    expect{subject.release_bike(bike)}.to raise_error("bike rack empty")
+  end
+#currently tests anytime relseasing a bike an error is raised. if too many bikes are taken, report back empty.
+  #so dock cannot be full but can be empty
 end
