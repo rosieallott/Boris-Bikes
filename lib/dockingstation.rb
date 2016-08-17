@@ -5,7 +5,7 @@ class DockingStation
 
   def release_bike
     raise "no bikes" unless @bike
-    @bike
+    @bike 
   end
 
   def dock_bike(bike)
