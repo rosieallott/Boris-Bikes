@@ -10,7 +10,6 @@ describe DockingStation do
     expect(subject.dock_bike(bike)).to include bike #change eq to include? bike
   end
 
-
   it "raises empty exceptions" do
     expect{subject.release_bike}.to raise_error("no bikes")
   end
@@ -20,5 +19,10 @@ describe DockingStation do
   it "only allows docking up to a certain capacity then throws full error" do
     subjecto = DockingStation.new
     expect {DockingStation::DEFAULT_CAPACITY.times do subjecto.dock_bike(Bike.new) end}.to raise_error("full!")
+  end
+
+  #test initializing DockingStation with capacity argument
+  it "tests whether class initialization can take an argument" do
+    expect{subject(3)}.not_to raise_error
   end
 end
