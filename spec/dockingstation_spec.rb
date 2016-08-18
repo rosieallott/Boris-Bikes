@@ -27,8 +27,8 @@ describe DockingStation do
   end
 
   it "when given an argument to docking station, capacity equals that argument" do
-    n = 3
-    expect(DockingStation.new(n)).to eq @capacity
+    station = DockingStation.new(3)
+    expect(station.capacity).to eq 3
   end
 
 end
