@@ -22,7 +22,7 @@ describe DockingStation do
   end
 
   #test initializing DockingStation with capacity argument
-  it "tests whether class initialization can take an argument" do
-    expect{subject(3)}.not_to raise_error
+  it "when given no argument, docking station equals default capacity" do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 end
