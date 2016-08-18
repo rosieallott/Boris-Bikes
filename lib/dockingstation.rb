@@ -23,7 +23,7 @@ class DockingStation
 private
 
   def full?
-    @bikes.size >= (DEFAULT_CAPACITY - 1)
+    @bikes.size >= DEFAULT_CAPACITY
   end
 
 end

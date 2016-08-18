@@ -17,8 +17,9 @@ describe DockingStation do
   #so dock cannot be full but can be empty
 
   it "only allows docking up to a certain capacity then throws full error" do
-    subjecto = DockingStation.new
-    expect {DockingStation::DEFAULT_CAPACITY.times do subjecto.dock_bike(Bike.new) end}.to raise_error("full!")
+    ds = DockingStation.new
+    (ds.capacity).times {ds.dock_bike(Bike.new)}
+    expect {ds.dock_bike(Bike.new)}.to raise_error("full!")
   end
 
   #test initializing DockingStation with capacity argument
