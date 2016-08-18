@@ -4,7 +4,7 @@ describe DockingStation do
   it {expect(subject).to respond_to(:release_bike)}
   it {expect(subject).to respond_to(:dock_bike).with(1).argument}
   it "docks something" do
-    bike = Bike.new
+    bike = double(:bike)
     #We want to return the bike we dock
     expect(subject.dock_bike(bike)).to include bike #change eq to include? bike
   end
@@ -32,16 +32,16 @@ describe DockingStation do
   end
 
   it "docking stations accepts broken bike" do #working bikes can already be docked (tested above)
-    bike = (Bike.new)
-    bike.report_broken
+    bike = double(:bike)
+    allow(bike).to receive(:report_broken).and_return(false)
     expect(subject.dock_bike(bike)).to include bike
   end
 
   it "docking stations do not release broken bikes" do
-    bike = (Bike.new)
-    bike.report_broken
+    bike = double(:bike)
+    allow(bike).to receive(:working?).and_return(false)
     subject.dock_bike(bike)
     expect{subject.release_bike}.to raise_error("broken bike")
-  end 
+  end
 
 end
