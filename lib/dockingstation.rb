@@ -2,10 +2,14 @@ require './lib/bike'
 
 class DockingStation
   attr_reader :bike
+  DEFAULT_CAPACITY = 20
 
-DEFAULT_CAPACITY = 20
-  def initialize
-    @bikes = []
+    def initialize
+      @bikes = []
+    end
+
+  def capacity
+    @capacity = DEFAULT_CAPACITY
   end
 
   def release_bike

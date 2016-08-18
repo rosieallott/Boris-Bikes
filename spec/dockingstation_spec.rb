@@ -25,4 +25,10 @@ describe DockingStation do
   it "when given no argument, docking station equals default capacity" do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
+
+  it "when given an argument to docking station, capacity equals that argument" do
+    n = 3
+    expect(DockingStation.new(n)).to eq @capacity
+  end
+
 end
