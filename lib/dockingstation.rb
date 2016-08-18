@@ -10,7 +10,7 @@ class DockingStation
       @capacity = capacity
     end
 
-  def release_bike 
+  def release_bike
     raise "no bikes" if @bikes.empty?
     @bikes.pop
   end
@@ -23,7 +23,7 @@ class DockingStation
 private
 
   def full?
-    @bikes.size >= DEFAULT_CAPACITY
+    @bikes.size >= @capacity
   end
 
 end

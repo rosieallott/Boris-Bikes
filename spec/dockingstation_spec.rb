@@ -2,7 +2,6 @@ require 'dockingstation'
 
 describe DockingStation do
   it {expect(subject).to respond_to(:release_bike)}
-  it {expect(Bike.new.working?).to eq true}
   it {expect(subject).to respond_to(:dock_bike).with(1).argument}
   it "docks something" do
     bike = Bike.new
